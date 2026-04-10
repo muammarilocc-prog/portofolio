@@ -482,3 +482,17 @@ grid-template-columns:1fr;
 }
 
 }
+/* TOMBOL LANDING DI NAV */
+
+.landing-btn{
+border:1px solid #ff9800;
+padding:8px 18px;
+border-radius:20px;
+color:#ff9800;
+transition:0.3s;
+}
+
+.landing-btn:hover{
+background:#ff9800;
+color:black;
+}
