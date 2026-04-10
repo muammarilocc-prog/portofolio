@@ -1,156 +1,324 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Muammar Portofolio</title>
+<title>Portofolio Muammar</title>
+
+<link rel="stylesheet" href="style.css?v=2">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-color:white;
-overflow:hidden;
-}
-
-/* BACKGROUND ANIMATION */
-
-body::before{
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-background:#ff9800;
-filter:blur(200px);
-opacity:0.4;
-top:-200px;
-left:-200px;
-}
-
-body::after{
-content:"";
-position:absolute;
-width:500px;
-height:500px;
-background:#00c3ff;
-filter:blur(200px);
-opacity:0.4;
-bottom:-200px;
-right:-200px;
-}
-
-/* CONTAINER */
-
-.container{
-position:relative;
-text-align:center;
-max-width:700px;
-padding:40px;
-}
-
-/* TITLE */
-
-h1{
-font-size:55px;
-margin-bottom:20px;
-}
-
-span{
-color:#ff9800;
-}
-
-/* TEXT */
-
-p{
-font-size:18px;
-color:#ddd;
-margin-bottom:40px;
-line-height:1.6;
-}
-
-/* BUTTON */
-
-.btn{
-display:inline-block;
-padding:15px 40px;
-background:#ff9800;
-color:black;
-text-decoration:none;
-border-radius:30px;
-font-weight:600;
-font-size:16px;
-transition:0.3s;
-box-shadow:0 10px 30px rgba(255,152,0,0.4);
-}
-
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 40px rgba(255,152,0,0.6);
-}
-
-/* SMALL TEXT */
-
-.small{
-margin-top:25px;
-font-size:14px;
-color:#aaa;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-h1{
-font-size:40px;
-}
-
-p{
-font-size:16px;
-}
-
-}
-
-</style>
-
 </head>
 
 <body>
+<!-- LANDING PAGE -->
+<div class="landing" id="landingPage">
+  <div class="landing-box">
 
-<div class="container">
+    <h1>
+      Halo, Saya <span>Muammar</span>
+    </h1>
 
-<h1>Halo, Saya <span>Muammar</span></h1>
+    <p>
+      Selamat datang di website portofolio saya. Di sini Anda dapat
+      melihat keahlian, proyek, serta layanan yang saya tawarkan.
+    </p>
 
-<p>
-Selamat datang di website portofolio saya.
-Di sini Anda dapat melihat keahlian, proyek,
-serta layanan yang saya tawarkan.
+    <a href="#" class="landing-btn" id="btnMasuk">
+      Masuk ke Portofolio →
+    </a>
+
+    <p style="margin-top:20px; font-size:14px; color:#aaa;">
+      Mahasiswa Sistem & Teknologi Informasi
+    </p>
+
+  </div>
+</div>
+
+<!-- MULAI BUNGKUS -->
+<div id="mainContent">
+
+<header>
+
+</button>
+<div class="logo">Muammar<span>.</span></div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<nav id="navMenu">
+<a href="#home" onclick="closeMenu()">Beranda</a>
+<a href="#about" onclick="closeMenu()">Tentang</a>
+<a href="#skills" onclick="closeMenu()">Keahlian</a>
+<a href="#portfolio" onclick="closeMenu()">Proyek</a>
+<a href="#services" onclick="closeMenu()">Layanan</a>
+<a href="#contact" class="btn-nav" onclick="closeMenu()">Kontak</a>
+<a href="#" class="btn-nav" onclick="kembaliLanding()">Kembali</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+<div class="hero-text">
+<p class="small">Halo, Saya</p>
+<h1>Muammar</h1>
+<h2>Mahasiswa Sistem & Teknologi Informasi</h2>
+
+<p class="desc">
 </p>
 
-<a href="portofolio.html" class="btn">
-Masuk ke Portofolio →
+<div class="buttons">
+<a href="#portfolio" class="btn">Lihat Proyek</a>
+<a href="#contact" class="btn-outline">Hubungi Saya</a>
+</div>
+
+</div>
+
+<div class="hero-img">
+<img src="Ilo.jpeg" alt="Foto Muammar">
+</div>
+
+</section>
+
+
+<!-- TENTANG -->
+<section id="about">
+
+<h2 class="section-title">Tentang Saya</h2>
+
+<div class="about-container">
+
+<div class="about-image">
+<img src="iloc.jpeg">
+</div>
+
+<div class="about-content">
+
+<p>
+Saya adalah seseorang yang tertarik pada bidang teknologi, khususnya
+pengembangan website dan desain digital. Saya memiliki minat dalam
+membuat tampilan website yang menarik, responsif, dan mudah digunakan.
+</p>
+
+<p>
+Selain itu saya juga memiliki kemampuan dalam desain menggunakan Canva,
+mengoperasikan Microsoft Office, serta memiliki pengalaman sebagai driver dan komunikasi yang baik.
+</p>
+
+<div class="about-info">
+
+<div class="info-card">
+<h4>Domisili</h4>
+<p>Makassar / Enrekang</p>
+</div>
+
+<div class="info-card">
+<h4>Hoby</h4>
+<p>Ngoding & Menjelajahi alam</p>
+</div>
+
+<div class="info-card">
+<h4>Minat</h4>
+<p>Teknologi & Digital</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+<h2 class="section-title">Keahlian Saya</h2>
+
+<div class="skills-container">
+
+<div class="skill-card">
+<img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
+<h3>Pemrograman Web</h3>
+<p>Mampu membuat dan mengembangkan website sederhana hingga modern.</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+<h3>HTML & CSS</h3>
+<p>Mendesain dan membangun tampilan website yang responsive.</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
+<h3>Canva Design</h3>
+<p>Membuat desain poster, presentasi, dan konten visual menarik.</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
+<h3>Microsoft Office</h3>
+<p>Menguasai Word, Excel, dan PowerPoint untuk kebutuhan kerja.</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png">
+<h3>Public Speaking</h3>
+<p>Mampu berbicara di depan umum dan menyampaikan ide dengan baik.</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048315.png">
+<h3>Driver</h3>
+<p>Layanan perjalanan Enrekang – Makassar dengan aman dan nyaman.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROYEK -->
+<section id="portfolio">
+
+<h2 class="section-title">Proyek Saya</h2>
+
+<div class="portfolio-container">
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<h3>Website Portfolio</h3>
+<p>Membuat website portfolio pribadi menggunakan HTML dan CSS dengan desain modern dan responsive.</p>
+</div>
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26">
+<h3>Desain Canva</h3>
+<p>Membuat berbagai desain poster, presentasi, dan konten visual menarik menggunakan Canva.</p>
+</div>
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+<h3>Microsoft Office</h3>
+<p>Membuat dokumen Word, laporan Excel, serta presentasi PowerPoint untuk kebutuhan akademik dan kerja.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LAYANAN -->
+<section id="services">
+
+<h2 class="section-title">Layanan yang Ditawarkan</h2>
+
+<div class="services-container">
+
+<div class="service-card">
+<div class="icon">💻</div>
+<h3>Pembuatan Website</h3>
+<p>Membantu pembuatan website sederhana seperti website portfolio, landing page, dan website informasi menggunakan HTML & CSS.</p>
+
+<ul>
+<li>Website responsive</li>
+<li>Desain modern</li>
+<li>Cocok untuk portfolio atau usaha</li>
+</ul>
+</div>
+
+
+<div class="service-card popular">
+<div class="icon">🎨</div>
+<h3>Desain Canva</h3>
+<p>Membuat desain visual menarik seperti poster, presentasi, banner, dan konten media sosial menggunakan Canva.</p>
+
+<ul>
+<li>Poster & banner</li>
+<li>Desain presentasi</li>
+<li>Konten media sosial</li>
+<li>Desain menarik</li>
+</ul>
+
+<span class="badge">Populer</span>
+</div>
+
+
+<div class="service-card">
+<div class="icon">📊</div>
+<h3>Microsoft Office</h3>
+<p>Membantu pembuatan dokumen kerja seperti laporan Word, pengolahan data Excel, dan presentasi PowerPoint.</p>
+
+<ul>
+<li>Dokumen Word</li>
+<li>Pengolahan data Excel</li>
+<li>Presentasi PowerPoint</li>
+</ul>
+</div>
+
+
+<div class="service-card">
+<div class="icon">🚗</div>
+<h3>Layanan Driver</h3>
+<p>Menyediakan layanan perjalanan Enrekang – Makassar dengan aman, nyaman, dan tepat waktu.</p>
+
+<ul>
+<li>Perjalanan aman</li>
+<li>Tepat waktu</li>
+<li>Perjalanan nyaman</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<!-- KONTAK -->
+<section id="contact">
+
+<h2 class="contact-title">Hubungi Saya!</h2>
+<p class="contact-subtitle">
+Jika ingin bekerja sama, bertanya, atau menggunakan layanan saya silakan hubungi melalui kontak berikut!!
+</p>
+
+<div class="contact-wrapper">
+
+<a href="https://wa.me/6281395717891" target="_blank" class="contact-card wa">
+<div class="icon">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</div>
+<div class="contact-info">
+<h3>WhatsApp</h3>
+<p>081343715174</p>
+</div>
 </a>
 
-<div class="small">
-Mahasiswa Sistem & Teknologi Informasi
+<a href="https://instagram.com/ilomuam2ar_" target="_blank" class="contact-card ig">
+<div class="icon">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
 </div>
+<div class="contact-info">
+<h3>Instagram</h3>
+<p>@ilomuam2ar_</p>
+</div>
+</a>
 
 </div>
 
+</section>
+
+
+<footer>
+
+<p>© 2026 Muammar | Website Portofolio Pribadi</p>
+
+</footer>
+</div>
+<script src="script.js"></script>
 </body>
-
 </html>
