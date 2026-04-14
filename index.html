@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,6 @@
 
 <header>
 
-</button>
 <div class="logo">Muammar<span>.</span></div>
 
 <div class="menu-toggle" onclick="toggleMenu()">
@@ -54,10 +53,13 @@
 <a href="#skills" onclick="closeMenu()">Keahlian</a>
 <a href="#portfolio" onclick="closeMenu()">Proyek</a>
 <a href="#services" onclick="closeMenu()">Layanan</a>
-<a href="#contact" class="btn-nav" onclick="closeMenu()">Kontak</a>
-<a href="#" class="btn-nav" onclick="kembaliLanding()">Kembali</a>
+<a href="#contact" onclick="closeMenu()">Kontak</a>
+<a href="#" class="btn-nav" onclick="kembaliLanding()">Keluar</a>
 </nav>
 
+<button id="themeToggle" class="theme-btn">
+  <span class="icon">☀️</span>
+</button>
 </header>
 
 <!-- HERO -->

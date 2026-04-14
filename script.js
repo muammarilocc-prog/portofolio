@@ -1,104 +1,98 @@
-// ================= MENU NAVBAR =================
-class Menu {
-  constructor() {
-    this.nav = document.getElementById("navMenu");
-  }
+/* ================= MENU ================= */
+const Menu = {
+  nav: document.getElementById("navMenu"),
 
   toggle() {
-    if (this.nav) {
-      this.nav.classList.toggle("active");
-    }
-  }
+    this.nav?.classList.toggle("active");
+  },
 
   close() {
-    if (this.nav) {
-      this.nav.classList.remove("active");
-    }
+    this.nav?.classList.remove("active");
   }
-}
+};
 
-// ================= LANDING PAGE =================
-class LandingPage {
-  constructor() {
-    this.landing = document.getElementById("landingPage");
-    this.main = document.getElementById("mainContent");
-    this.button = document.getElementById("btnMasuk");
+/* ================= LANDING PAGE ================= */
+const LandingPage = {
+  landing: document.getElementById("landingPage"),
+  main: document.getElementById("mainContent"),
+  button: document.getElementById("btnMasuk"),
 
-    // SET AWAL (WAJIB)
-    if (this.main) {
-      this.main.style.display = "none";
-    }
-
-    if (this.landing) {
-      this.landing.style.display = "flex";
-      this.landing.style.opacity = "1";
-    }
-
-    // event tombol masuk
-    if (this.button) {
-      this.button.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.masuk();
-      });
-    }
-  }
-
-  masuk() {
+  init() {
     if (!this.landing || !this.main) return;
 
-    // fade out
+    this.main.style.display = "none";
+    this.landing.style.display = "flex";
+
+    this.button?.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.masuk();
+    });
+  },
+
+  masuk() {
     this.landing.style.opacity = "0";
 
     setTimeout(() => {
       this.landing.style.display = "none";
       this.main.style.display = "block";
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
-    }, 100);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 300);
   }
-}
+};
 
-// ================= INIT =================
-document.addEventListener("DOMContentLoaded", function () {
+/* ================= THEME ================= */
+const Theme = {
+  root: document.documentElement,
+  btn: document.getElementById("themeToggle"),
+  icon: document.querySelector("#themeToggle .icon"),
 
-  const menu = new Menu();
-  new LandingPage();
+  init() {
+    if (!this.btn || !this.icon) return;
 
-  // GLOBAL FUNCTION (WAJIB pakai window)
-  window.toggleMenu = function(){
-    menu.toggle();
+    this.current = localStorage.getItem("theme") || "dark";
+    this.apply(false);
+
+    this.btn.addEventListener("click", () => this.toggle());
+  },
+
+  apply(animate = true) {
+    this.root.setAttribute("data-theme", this.current);
+    localStorage.setItem("theme", this.current);
+
+    this.icon.textContent = this.current === "dark" ? "☀️" : "🌙";
+
+    if (animate) {
+      this.icon.style.transform = "rotate(180deg)";
+      setTimeout(() => {
+        this.icon.style.transform = "rotate(0deg)";
+      }, 200);
+    }
+  },
+
+  toggle() {
+    this.current = this.current === "dark" ? "light" : "dark";
+    this.apply(true);
   }
+};
 
-  window.closeMenu = function(){
-    menu.close();
-  }
-
-  window.kembaliLanding = function(){
-    const landing = document.getElementById("landingPage");
-    const main = document.getElementById("mainContent");
-
-    if (!landing || !main) return;
-
-    // tampilkan landing
-    landing.style.display = "flex";
-    landing.style.opacity = "0";
-
-    setTimeout(() => {
-      landing.style.opacity = "1";
-    }, 50);
-
-    // sembunyikan main
-    main.style.display = "none";
-
-    // scroll ke atas
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-
+/* ================= INIT ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  LandingPage.init();
+  Theme.init();
 });
+function kembaliLanding() {
+  const landing = document.getElementById("landingPage");
+  const main = document.getElementById("mainContent");
+
+  if (!landing || !main) return;
+
+  // sembunyikan main
+  main.style.display = "none";
+
+  // tampilkan landing lagi
+  landing.style.display = "flex";
+  landing.style.opacity = "1";
+
+  // scroll ke atas
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
